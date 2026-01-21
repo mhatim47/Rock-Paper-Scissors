@@ -1,52 +1,33 @@
-/*
-paper  - rock -> win
-paper - scissor -> lose
 
-rock - scissor -> win
-rock - paper -> lose
-
-sicssor - paper -> win
-sicssor - rock -> lose
-
-*/
-
-
-const computerChoice = document.getElementById("computer-choice");
-const playerChoice = document.getElementById("player-choice");
+const computerChoiceDisplay = document.getElementById("computer-choice");
+const playerChoiceDisplay = document.getElementById("player-choice");
 const result = document.getElementById("result");
+
 const choices = ['paper', 'rock', 'scissors'];
+let playerChoice, computerChoice;
 
 const possibleChoices = document.querySelectorAll('button');
-possibleChoices.forEach(element => {
-    element.addEventListener('click', (e) => {
-        let player = e.target.id.toLowerCase()
+possibleChoices.forEach(element => element.addEventListener('click', (e) => {
+        playerChoice = e.target.id
+        computerChoice = choices[Math.floor(Math.random() *3)]
 
-        let [winner, computer] = game(player);
-        computerChoice.innerText = computer;
-        playerChoice.innerText = player;
+        let winner = getWinner();
+        playerChoiceDisplay.innerText = playerChoice;
+        computerChoiceDisplay.innerText = computerChoice;
         result.innerText = winner;
     })   
-});
+);
 
 
-
-
-
-const whoWin = (player, computer) => {
-    if (player === 'paper') {
-    return computer === 'rock' ? 'player': computer === 'scissors' ? 'computer': 'draw';
-} else if (player === 'rock') {
-    return computer === 'scissors' ? 'player': computer === 'paper' ? 'computer': 'draw';
-} else if (player === 'scissors') {
-    return computer === 'paper' ? 'player': computer === 'rock' ? 'computer': 'draw';
-} else {
-    return 'error'
-}
-}
-const game = (playerChoice) => {
-    let player = playerChoice;
-    let computerChoice = choices[Math.floor(Math.random() *3)]
-    let winer = whoWin(player, computerChoice);
-    return [winer, computerChoice]
+const getWinner = () =>{
+    if (playerChoice === computerChoice) {
+        return "It's a draw!"
+    } else if (playerChoice === 'rock') {
+        return computerChoice === 'scissors' ? 'player':'computer';
+    } else if (playerChoice === 'scissors') {
+        return computerChoice === 'paper' ? 'player': 'computer';
+    } else if (playerChoice === 'paper') {
+        return computerChoice === 'scissors' ? 'player': 'computer';
+    } 
 }
 
