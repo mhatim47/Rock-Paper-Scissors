@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form >
+        <div>
+            <h2>Player Choice</h2>
+            <div>
+                <p>
+                    <input type="radio" name="p-choics" id="rock" value="Rock">
+                    <label for="rock">Rock</label>
+                </p>
+                <p>
+                    <input type="radio" name="p-choics" id="paper" value="Paper">
+                    <label for="paper">Paper</label>
+                </p>
+                <p>
+                    <input type="radio" name="p-choics" id="scissor" value="Scissor">
+                    <label for="scissor">Scissor</label>
+                </p>
+            </div>
+            <button id="btn">Play</button>
+            <div>
+                <h2>Computer Choice</h2>
+                <p id="c-choice"></p>
+            </div>
+            <div id="winner"></div>
+        </div>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
