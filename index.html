@@ -7,31 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form >
-        <div>
-            <h2>Player Choice</h2>
-            <div>
-                <p>
-                    <input type="radio" name="p-choics" id="rock" value="Rock">
-                    <label for="rock">Rock</label>
-                </p>
-                <p>
-                    <input type="radio" name="p-choics" id="paper" value="Paper">
-                    <label for="paper">Paper</label>
-                </p>
-                <p>
-                    <input type="radio" name="p-choics" id="scissor" value="Scissor">
-                    <label for="scissor">Scissor</label>
-                </p>
-            </div>
-            <button id="btn">Play</button>
-            <div>
-                <h2>Computer Choice</h2>
-                <p id="c-choice"></p>
-            </div>
-            <div id="winner"></div>
-        </div>
-    </form>
+    <h2>Computer Choice: <span id="computer-choice"></span></h2>
+    <h2>Player Choice: <span id="player-choice"></span></h2>
+    <h2>Result: <span id="result"></span></h2>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
     <script src="main.js"></script>
 </body>
 </html>
