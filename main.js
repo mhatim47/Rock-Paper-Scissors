@@ -16,8 +16,8 @@ const playerChoice = document.getElementById("player-choice");
 const result = document.getElementById("result");
 const choices = ['paper', 'rock', 'scissors'];
 
-const btns = document.getElementsByTagName('button');
-Array.from(btns).forEach(element => {
+const possibleChoices = document.querySelectorAll('button');
+possibleChoices.forEach(element => {
     element.addEventListener('click', (e) => {
         let player = e.target.id.toLowerCase()
 
@@ -47,7 +47,6 @@ const game = (playerChoice) => {
     let player = playerChoice;
     let computerChoice = choices[Math.floor(Math.random() *3)]
     let winer = whoWin(player, computerChoice);
-    console.log(`Player: ${player} | Computer: ${computerChoice} => Winer: ${winer}`)
     return [winer, computerChoice]
 }
 
